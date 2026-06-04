@@ -1,0 +1,475 @@
+
+:root {
+  --cream: #f6ebd7;
+  --navy: #062f5f;
+  --plum: #64216e;
+  --airbnb: #ff5a5f;
+  --shadow: 0 26px 80px rgba(6, 47, 95, .18);
+}
+
+* { box-sizing: border-box; }
+
+html { background: #fbf7ef; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  padding: clamp(10px, 2vw, 28px);
+  display: grid;
+  place-items: center;
+  color: var(--navy);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.site-shell { width: min(1480px, 100%); }
+
+.hero {
+  position: relative;
+  min-height: min(900px, calc(100dvh - 32px));
+  overflow: hidden;
+  border-radius: 22px;
+  background:
+    linear-gradient(90deg, rgba(246,235,215,.92), rgba(246,235,215,.82)),
+    url("../assets/decor/stucco-background.webp") center / cover;
+  box-shadow: var(--shadow);
+}
+
+.bougainvillea {
+  position: absolute;
+  left: -2%;
+  top: -5%;
+  width: 30%;
+  height: 55%;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 18% 12%, #c9165e 0 10px, transparent 11px),
+    radial-gradient(circle at 38% 20%, #e43a78 0 9px, transparent 10px),
+    radial-gradient(circle at 58% 10%, #c9165e 0 9px, transparent 10px),
+    radial-gradient(circle at 70% 30%, #e43a78 0 8px, transparent 9px),
+    radial-gradient(circle at 28% 42%, #c9165e 0 9px, transparent 10px),
+    radial-gradient(circle at 53% 55%, #e43a78 0 8px, transparent 9px),
+    radial-gradient(circle at 15% 68%, #c9165e 0 7px, transparent 8px),
+    radial-gradient(circle at 75% 76%, #e43a78 0 8px, transparent 9px),
+    linear-gradient(125deg, rgba(38,96,45,.72), rgba(38,96,45,.08) 58%, transparent 59%);
+  filter: drop-shadow(0 6px 5px rgba(50,50,30,.15));
+  transform: rotate(-4deg);
+}
+
+.top-nav {
+  position: relative;
+  z-index: 20;
+  height: 72px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 34px;
+  padding: 0 clamp(32px, 4vw, 72px);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.text-links, .icon-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.top-nav a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.hamburger { display: none; }
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.content {
+  position: relative;
+  z-index: 12;
+  width: min(650px, 50vw);
+  margin-left: clamp(230px, 20vw, 350px);
+  margin-top: clamp(38px, 4.5vw, 72px);
+  text-align: center;
+}
+
+.brand-row {
+  display: grid;
+  grid-template-columns: 76px minmax(300px, 380px) 76px;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.plaque {
+  width: min(380px, 100%);
+  filter: drop-shadow(0 10px 7px rgba(8,35,60,.25));
+}
+
+.leaf { width: 74px; }
+
+h1 {
+  margin: 0;
+  color: var(--navy);
+  font: 500 clamp(64px, 7vw, 106px)/.92 Georgia, "Times New Roman", serif;
+  text-transform: uppercase;
+  letter-spacing: .035em;
+}
+
+.divider {
+  width: 190px;
+  height: 24px;
+  margin: 24px auto;
+  background:
+    radial-gradient(circle, var(--navy) 0 5px, transparent 6px) center / 24px 24px no-repeat,
+    linear-gradient(var(--navy), var(--navy)) left 50% / 72px 2px no-repeat,
+    linear-gradient(var(--navy), var(--navy)) right 50% / 72px 2px no-repeat;
+}
+
+.tagline {
+  margin: 0 auto;
+  color: var(--plum);
+  font: 700 clamp(21px, 2.15vw, 31px)/1.28 Georgia, "Times New Roman", serif;
+}
+
+.heart {
+  color: var(--plum);
+  font-size: 28px;
+  margin: 14px 0 17px;
+}
+
+.description {
+  margin: 0 auto;
+  width: min(480px, 100%);
+  color: #071c30;
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.48;
+}
+
+.description strong { color: var(--navy); }
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 34px auto 22px;
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  min-width: 172px;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  background: rgba(255,255,255,.18);
+}
+
+.cta.instagram {
+  color: var(--plum);
+  border: 2px solid #9a70a1;
+}
+
+.cta.airbnb {
+  color: var(--airbnb);
+  border: 2px solid var(--airbnb);
+}
+
+.cta img {
+  width: 27px;
+  height: 27px;
+}
+
+.joke {
+  margin: 0 auto 116px;
+  color: var(--plum);
+  font: italic 700 clamp(17px, 1.45vw, 22px)/1.35 "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
+}
+
+.arch-scene {
+  position: absolute;
+  z-index: 5;
+  top: 42px;
+  right: 2.2%;
+  bottom: 84px;
+  width: min(540px, 42%);
+  border-radius: 999px 999px 0 0;
+  overflow: hidden;
+  box-shadow: -18px 24px 55px rgba(6,47,95,.18);
+}
+
+.arch-scene img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* This is a single image asset for table + margarita + Bora coasters */
+.table-zone {
+  position: absolute;
+  left: 2.5%;
+  bottom: 84px;
+  width: min(520px, 34vw);
+  height: auto;
+  z-index: 15;
+}
+
+.table-zone img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.18));
+}
+
+.desktop-border {
+  position: absolute;
+  z-index: 30;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 82px;
+  background: url("../assets/decor/talavera-border-desktop.webp") left bottom / auto 82px repeat-x;
+  border-top: 2px solid #07345f;
+}
+
+.mobile-border { display: none; }
+
+body.force-desktop {
+  min-width: 1160px;
+}
+
+@media (max-width: 760px) {
+  body {
+    display: block;
+    padding: 0;
+  }
+
+  .site-shell {
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .hero {
+    border-radius: 0;
+    min-height: 100dvh;
+  }
+
+  .bougainvillea {
+    width: 62%;
+    height: 28%;
+    left: -20%;
+    top: -4%;
+  }
+
+  .top-nav {
+    height: 74px;
+    padding: max(14px, env(safe-area-inset-top)) 22px 0;
+    justify-content: space-between;
+  }
+
+  .text-links { display: none; }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .hamburger span {
+    width: 28px;
+    height: 3px;
+    background: var(--navy);
+    border-radius: 3px;
+  }
+
+  .icon-links { gap: 18px; }
+
+  .content {
+    width: min(100% - 40px, 380px);
+    margin: 30px auto 0;
+  }
+
+  .brand-row {
+    grid-template-columns: 42px minmax(210px, 270px) 42px;
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  .plaque { width: min(270px, 66vw); }
+
+  .leaf { width: 42px; }
+
+  h1 {
+    font-size: clamp(43px, 15vw, 64px);
+    line-height: .96;
+  }
+
+  .divider {
+    margin: 18px auto;
+    width: 150px;
+  }
+
+  .tagline { font-size: 22px; }
+
+  .description {
+    font-size: 16px;
+    width: min(320px, 100%);
+  }
+
+  .cta-row {
+    flex-direction: column;
+    width: min(320px, 100%);
+    margin-top: 28px;
+  }
+
+  .cta {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .joke {
+    margin-bottom: 30px;
+    font-size: 19px;
+  }
+
+  .arch-scene {
+    position: relative;
+    inset: auto;
+    width: min(92%, 350px);
+    height: 390px;
+    margin: 24px auto 0;
+    border-radius: 999px 999px 0 0;
+  }
+
+  .table-zone,
+  .desktop-border {
+    display: none;
+  }
+
+  .mobile-border {
+    display: block;
+    height: 86px;
+    background: url("../assets/decor/mobile-5-tile-bora-border.webp") center / 100% 100% no-repeat;
+    border-top: 2px solid #07345f;
+  }
+}
+
+/* Forced mobile page */
+body.force-mobile {
+  display: block;
+  padding: 0;
+}
+
+body.force-mobile .site-shell {
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+body.force-mobile .hero {
+  border-radius: 0;
+  min-height: auto;
+}
+
+body.force-mobile .bougainvillea {
+  width: 62%;
+  height: 28%;
+  left: -20%;
+  top: -4%;
+}
+
+body.force-mobile .top-nav {
+  height: 74px;
+  padding: max(14px, env(safe-area-inset-top)) 22px 0;
+  justify-content: space-between;
+}
+
+body.force-mobile .text-links { display: none; }
+
+body.force-mobile .hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+body.force-mobile .hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--navy);
+  border-radius: 3px;
+}
+
+body.force-mobile .content {
+  width: min(100% - 40px, 380px);
+  margin: 30px auto 0;
+}
+
+body.force-mobile .brand-row {
+  grid-template-columns: 42px minmax(210px, 270px) 42px;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+body.force-mobile .plaque { width: min(270px, 66vw); }
+
+body.force-mobile .leaf { width: 42px; }
+
+body.force-mobile h1 {
+  font-size: clamp(43px, 15vw, 64px);
+  line-height: .96;
+}
+
+body.force-mobile .tagline { font-size: 22px; }
+
+body.force-mobile .description {
+  font-size: 16px;
+  width: min(320px, 100%);
+}
+
+body.force-mobile .cta-row {
+  flex-direction: column;
+  width: min(320px, 100%);
+  margin-top: 28px;
+}
+
+body.force-mobile .cta {
+  width: 100%;
+  min-height: 48px;
+}
+
+body.force-mobile .joke {
+  margin-bottom: 30px;
+  font-size: 19px;
+}
+
+body.force-mobile .arch-scene {
+  position: relative;
+  inset: auto;
+  width: min(92%, 350px);
+  height: 390px;
+  margin: 24px auto 0;
+  border-radius: 999px 999px 0 0;
+}
+
+body.force-mobile .table-zone,
+body.force-mobile .desktop-border {
+  display: none;
+}
+
+body.force-mobile .mobile-border {
+  display: block;
+  height: 86px;
+  background: url("../assets/decor/mobile-5-tile-bora-border.webp") center / 100% 100% no-repeat;
+  border-top: 2px solid #07345f;
+}
